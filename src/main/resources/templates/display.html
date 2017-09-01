@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Score Table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="display.css" th:href="@{/css-js/display.css}"/>
+	<script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js}"></script>
+	<script th:src="@{/css-js/display.js}"></script>
+	
+	 
+</head>
+<body>
+<p id="hint" style="color:white;">Simply click on the desired score header to sort according to that score. Example: Click on Entity Score</p>
+<div class="table-title">
+<h3>Provenance Scores Leaderboards</h3>
+</div>
+<table id="table" class="table-fill">
+    <thead>
+        <tr>
+          
+            <th class="text-left">Site Name</th>
+            <th id="Entity_Score" class="text-left">Entity Score</th>
+			<th id="Generation_Score" class="text-left">Generation Score</th>
+			<th id="Weighted_Score" class="text-left">Weighted Score</th>
+			<th class="text-left">Prov Graph</th>
+        </tr>
+    </thead>
+	<tbody class="table-hover">
+		<tr th:each="record : ${provScores}">
+			
+			<td class="text-left"><a th:href="${record.siteName}"><p th:text="${record.siteName}"></p></a></td>
+			<td class="text-left" th:text="${record.EntityScore}"></td>
+			<td class="text-left" th:text="${record.GenerationScore}"></td>
+			<td class="text-left" th:text="${record.WeightedScore}"></td>
+			<td class="text-left"><a  target="_blank" th:href="@{/graphs/}+${record.domain}+.svg"><p th:text="${record.domain}"></p></a></td>
+		</tr>
+	</tbody>	
+</table>
+</body>
+</html>
+

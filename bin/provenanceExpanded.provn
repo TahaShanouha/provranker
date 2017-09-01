@@ -1,0 +1,14 @@
+document
+bundle uuid:fd78efea-6fd0-4785-8c7c-297ff5a5e891
+prefix cx <xa>
+prefix pre_0 <http://example.org/meta#>
+prefix uuid <urn:uuid:>
+prefix meta <http://www.thesun.co.uk>
+
+entity(meta:The,[prov:type = 'prov:Collection'])
+entity(meta:www.thesun.co.uk,[pre_0:description = "meta:Get the latest news, exclusives, sport, celebrities, showbiz, politics, business and lifestyle from The Sun" %% cx:xb, pre_0:ogDescription = "meta:The Best for News, Sport, Showbiz, Celebrities" %% cx:xb, pre_0:ogTitle = "meta:The Sun" %% cx:xb, pre_0:site = "meta:The Sun" %% cx:xb])
+specializationOf(meta:The,meta:www.thesun.co.uk)
+activity(meta:publishing,-,-)
+wasGeneratedBy(meta:The,meta:publishing,-)
+endBundle
+endDocument

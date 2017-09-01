@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+	#error{
+		visibility:hidden;
+	}
+	#error p{
+		font-size:26px;
+		color:red;
+	}	
+</style>
+<script type="text/javascript" src="index.js"></script>
+    <title>ProvRanker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p>Welcome to the provenance ranking system!</p><br>
+	<form action="/provrank/extract">
+		URL to ProvRank: <input id="url" type="text" name="url"><br>
+		<input id ="submit-btn" type="submit" value="Submit">
+	</form>
+	<div id="error">
+		<p> Please enter a valid URL, a valid url format is of the following http://www.example.com </p>
+	</div>
+</body>
+</html>

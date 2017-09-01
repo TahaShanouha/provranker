@@ -1,0 +1,14 @@
+document
+ prefix tmpl <http://openprovenance.org/tmpl#>
+ prefix var <http://openprovenance.org/var#>
+ prefix vargen <http://openprovenance.org/vargen#>
+ prefix meta <http://example.org/meta#>
+ bundle vargen:metaExtraction
+
+entity(var:currentPage,[ prov:type='prov:Collection' ])
+entity(var:mainUrl, [meta:value='var:title',meta:description='var:description',meta:ogDescription='var:ogDescription',meta:ogTitle='var:ogTitle',meta:keywords='var:keywords',meta:site='var:site_name']) 
+  specializationOf(var:currentPage,var:mainUrl)
+  activity(var:publishing)
+  wasGeneratedBy(var:currentPage,var:publishing,-,[meta:value='var:published_time',meta:date='var:date',meta:publisher='var:contact',meta:contributor='var:contributors',meta:author='var:author',meta:creator='var:creator'])
+ endBundle
+endDocument
